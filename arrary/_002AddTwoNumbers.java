@@ -27,28 +27,30 @@ class _002AddTwoNumbersSolution {
     
 
 
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode newHead = new ListNode(0);
-        int carry = 0;
-        ListNode p1 = l1;
-        ListNode p2 = l2;
-        ListNode curr = newHead;
-        while(p1 != null || p2 != null) {
-            int val1 = p1 != null ? p1.val : 0;
-            int val2 = p2 != null ? p2.val : 0;
-            int sum = ((val1 + val2)  + (carry > 0 ? carry : 0)) % 10;
-            carry = ((val1 + val2)  + (carry > 0 ? carry : 0)) / 10;
-            curr.next = new ListNode(sum);
-            curr = curr.next;
-            if(p1 != null)
-                p1 = p1.next;
-            if(p2 != null)
-                p2 = p2.next;
-        }
-        if (carry > 0) {
-            curr.next = new ListNode(carry);
-        }
-
-        return newHead.next;
+public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    ListNode newHead = new ListNode(0);// 申请一个新的链表存储计算的结果
+    int carry = 0;// 1️⃣表示进位，当退出循环的时候也要考虑进位，很多面试者容易忽略这一点
+    ListNode p1 = l1;
+    ListNode p2 = l2;
+    ListNode curr = newHead;// 2️⃣不能对newHead直接操作，因为我们最后是要返回这个newHead的，所以要有一个新的指针指向它
+    while(p1 != null || p2 != null) {
+        int val1 = p1 != null ? p1.val : 0;
+        int val2 = p2 != null ? p2.val : 0;
+        // 3️⃣ 这里其实就是小学数学加法的只是，考虑进位就行了，没啥好说的
+        int sum = ((val1 + val2)  + (carry > 0 ? carry : 0)) % 10;
+        carry = ((val1 + val2)  + (carry > 0 ? carry : 0)) / 10;
+        curr.next = new ListNode(sum);
+        curr = curr.next;// 4️⃣考察链表的基本操作
+        if(p1 != null)
+            p1 = p1.next;
+        if(p2 != null)
+            p2 = p2.next;
     }
+    // 5️⃣循环结束后也要考虑进位
+    if (carry > 0) {
+        curr.next = new ListNode(carry);
+    }
+    // 6️⃣这里就能体会到2️⃣的作用了
+    return newHead.next;
+}
 }
