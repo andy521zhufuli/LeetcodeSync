@@ -1,10 +1,7 @@
-import java.lang.annotation.ElementType;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import apple.laf.JRSUIUtils.Tree;
-import sun.net.www.content.text.plain;
 
 class _236LowestCommonAncestor {
     public static void main(String[] args) {
