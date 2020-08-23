@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 杨辉三角
+ */
 class _118YHTriangles{
     public static void main(String[] args) {
         YXT solution = new YXT();
@@ -9,6 +12,7 @@ class _118YHTriangles{
 }
 
 class YXT {
+    // 暴力解法
     public List<List<Integer>> generate(int numRows) {
         if(numRows<=0){
             return new ArrayList();
