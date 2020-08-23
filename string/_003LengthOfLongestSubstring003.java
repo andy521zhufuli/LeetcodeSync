@@ -6,9 +6,9 @@ import java.util.Set;
 /**
  * 无重复字符的最长子串 LeetCode003
  */
-class LengthOfLongestSubstring003 {
+class _003LengthOfLongestSubstring003 {
     public static void main(String[] args) {
-        System.out.println(lengthOfLongestSubstringOptSlideWindow("abcacbaa"));
+        System.out.println(opt("abcacbaa"));
     }
 
     /**
@@ -75,7 +75,7 @@ class LengthOfLongestSubstring003 {
                 set.add(s.charAt(j++));
                 ans = Math.max(ans, j - i);
             } else {
-                set.remove(s.charAt(i++));
+                set.remove(s.charAt(i++));// 这里是精髓 只删除最左边的，比如abc,后面一个是c，那么这里就会一直删除，知道abc全被删除，最后走上面的if，把c添加进去，这就是滑动窗口的精髓
             }
         }
         return ans;
