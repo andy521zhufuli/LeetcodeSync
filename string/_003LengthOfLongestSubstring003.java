@@ -8,7 +8,7 @@ import java.util.Set;
  */
 class _003LengthOfLongestSubstring003 {
     public static void main(String[] args) {
-        System.out.println(opt("abcacbaa"));
+        System.out.println(lengthOfLongestSubstring("abcacbaa"));
     }
 
     /**

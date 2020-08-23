@@ -3,7 +3,7 @@
  * https://leetcode-cn.com/problems/longest-common-prefix/submissions/
  * 有对应的keynote动画图解
  */
-class LongestCommonPrefix {
+class _014LongestCommonPrefix {
     public static void main(String[] args) {
         String[] strs = {"flower","flow","flight"};
         System.out.print(longestCommonPrefix(strs));
