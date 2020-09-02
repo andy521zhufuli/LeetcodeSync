@@ -1,6 +1,6 @@
 public class _007ReverseNumber {
     public static void main(String[] args) {
-        int result = reverse(123);
+        int result = reverse(1534236469);
         System.out.println(result);
     }
 
