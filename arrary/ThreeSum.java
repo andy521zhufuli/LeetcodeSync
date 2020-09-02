@@ -1,12 +1,10 @@
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.List;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Arrays;
 class ThreeSum{
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution111 solution = new Solution111();
                   //" -4, -1, -1, 0,  1,  2"
         int[] nums = {-1,  0,  1, 2, -1, -4};
         List<List<Integer>> result = solution.threeSum(nums);
@@ -32,7 +30,7 @@ class ThreeSum{
   HashMap 的 key 是唯一的 也可以了解一下 
 
 */
-class Solution {
+class Solution111 {
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         ArrayList<List<Integer>> result = new ArrayList<>();

@@ -1,9 +1,9 @@
 import java.util.Arrays;
 
-class DynamicProgramming {
+public class DynamicProgramming1 {
     public static void main(String[] args) {
 
-        SolutionMaxProfit profit = new SolutionMaxProfit();
+        SolutionMaxProfit1 profit = new SolutionMaxProfit1();
         int[] prices = {1,2,3,9};
         int result = profit.maxProfit(prices);
 
@@ -16,7 +16,7 @@ class DynamicProgramming {
             { 3, 2, 6, 1, 3 }, 
             { 1, 1, 1, 0, 2 } 
         };
-        SolutionNormalDP normalDP = new SolutionNormalDP();
+        SolutionNormalDP1 normalDP = new SolutionNormalDP1();
         int res = normalDP.maxApple(apple, 4, 5);
     }
 }
@@ -24,7 +24,7 @@ class DynamicProgramming {
 /**
  * 121. 买卖股票的最佳时机
  */
-class SolutionMaxProfit {
+class SolutionMaxProfit1 {
     /**
      * opt(i) 表示前i天获得的最大利润
      * opt(i) = max{opt(i- 1), price[i-1] - price[i]} // 
@@ -106,7 +106,7 @@ class CowProblem {
  * 普通DP问题 Java-动态规划-最多苹果数量的方法
  * https://blog.csdn.net/pilihaotian/article/details/77477367
  */
-class SolutionNormalDP {
+class SolutionNormalDP1 {
     
 
     public int maxApple(int apple[][], int M, int N) {
