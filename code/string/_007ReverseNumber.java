@@ -1,17 +1,17 @@
 public class _007ReverseNumber {
     public static void main(String[] args) {
-        int result = reverse(1534236469);
+        int result = reverseWrong(1534236469);
         System.out.println(result);
     }
 
-public static int reverse1(int x) {
+public static int reverse(int x) {
     int ans = 0;
     while (x != 0) {
         int mod = x % 10;// 求余操作
         // 这里也就知道为什么下面两个判断为什么是7和8了
-        if (ans > Short.MAX_VALUE / 10 || (ans == Short.MAX_VALUE / 10 && mod > 7))
+        if (ans > Integer.MAX_VALUE / 10 || (ans == Integer.MAX_VALUE / 10 && mod > 7))
             return 0;
-        if (ans < Short.MIN_VALUE / 10 || (ans == Short.MIN_VALUE / 10 && mod < -8))
+        if (ans < Integer.MIN_VALUE / 10 || (ans == Integer.MIN_VALUE / 10 && mod < -8))
             return 0;
         ans = ans * 10 + mod;
         x /= 10;// 整除操作
@@ -24,7 +24,7 @@ public static int reverse1(int x) {
      * @param x
      * @return
      */
-    public static int reverse(int x) {
+    public static int reverseWrong(int x) {
         int ans = 0;
         while (x != 0) {
             int mod = x % 10;
